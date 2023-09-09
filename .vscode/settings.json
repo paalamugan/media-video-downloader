@@ -30,5 +30,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "prettier.ignorePath": ".gitignore",
-  "cSpell.words": ["trpc"] // Don't run prettier for files listed in .gitignore
+  "cSpell.words": ["paalan", "trpc"] // Don't run prettier for files listed in .gitignore
 }
