@@ -3,5 +3,5 @@
 
 if [ "$CZ" = "1" ] || [ "$2" = "message" ]; then true
 else
-  exec < /dev/tty && pnpm cz --hook || true
+  exec < /dev/tty && pnpm git-cz --hook || true
 fi
