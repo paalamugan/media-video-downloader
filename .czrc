@@ -1,5 +1,5 @@
 {
-  "path": "cz-emoji-conventional",
+  "path": "cz-emoji",
   "types": {
     "feat": {
       "emoji": "✨",

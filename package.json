@@ -6,10 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "build-stats": "cross-env ANALYZE=true yarn build",
+    "build-stats": "cross-env ANALYZE=true pnpm build",
     "clean": "rimraf .next .swc out coverage",
     "lint": "next lint",
-    "format": "yarn lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
+    "format": "pnpm lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
     "type-check": "tsc --noEmit --pretty && tsc --project cypress --noEmit --pretty",
     "test": "jest",
     "db:generate": "drizzle-kit generate:sqlite",
@@ -24,11 +24,10 @@
     "storybook:serve": "http-server storybook-static -a 127.0.0.1 --port 6006 --silent",
     "serve-storybook": "run-s storybook:*",
     "test-storybook:ci": "start-server-and-test serve-storybook http://127.0.0.1:6006 test-storybook",
-    "prepare": "husky install",
+    "prepare": "husky install && pnpm gen:theme",
     "postbuild": "next-sitemap",
     "release": "standard-version",
     "commit": "git-cz",
-    "postinstall": "yarn gen:theme",
     "gen:theme": "npx @chakra-ui/cli tokens ./src/styles/theme/index.ts"
   },
   "dependencies": {
@@ -53,8 +52,11 @@
   },
   "devDependencies": {
     "@chakra-ui/storybook-addon": "^5.0.1",
+    "@chakra-ui/styled-system": "^2.9.1",
+    "@chakra-ui/theme-tools": "^2.1.1",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
+    "@commitlint/types": "^17.4.4",
     "@next/bundle-analyzer": "^13.4.19",
     "@percy/cli": "^1.27.0",
     "@percy/cypress": "^3.1.2",
@@ -120,14 +122,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/paalamugan/next13-chakra-ui-boilerplate.git"
+    "url": "https://github.com/paalamugan/media-video-downloader.git"
   },
   "author": "Paalamugan (https://github.com/paalamugan)",
-  "packageManager": "yarn@1.22.19",
+  "packageManager": "pnpm@8.7.4",
   "engines": {
     "node": ">=18.x",
-    "yarn": ">=1.22.x",
-    "npm": "please-use-yarn"
+    "pnpm": ">=8.x",
+    "yarn": "please-use-pnpm-instead",
+    "npm": "please-use-pnpm-instead"
   },
   "keywords": [
     "nextjs",
