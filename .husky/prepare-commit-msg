@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-if [ "$CZ" = "1" ] || [ "$2" = "message" ]; then true
+if [ "$CZ" = "1" ] || [ "$2" = "message" ] || [ "$2" = "commit" ]; then true
 else
   exec < /dev/tty && pnpm git-cz --hook || true
 fi
